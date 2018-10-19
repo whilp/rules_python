@@ -153,7 +153,7 @@ py_library(
   requirements=args.requirements,
   dependencies=','.join([
     'requirement("%s")' % d
-    for d in whl.dependencies()
+    for d in sorted(set(whl.dependencies()))
   ]),
   extras='\n\n'.join([
     """py_library(
